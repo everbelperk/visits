@@ -3,6 +3,7 @@ services: # this sorts of defines the containers that are going to be used (belo
     redis-server: # this is the name given to this service
         image: 'redis' # this tells use the image named: redis
     node-app:
+        restart: always # This is a restart policy. In this case the container will always be restarted if it crashes (only this service)
         build: . # This says, look in the current dir and get from here ;)
         ports:
             - "4001:8081" # port mapping from host to container
